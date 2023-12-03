@@ -1,0 +1,14 @@
+/* Post Layout */
+.post-title {
+    text-align: justify;
+    width: 500px;
+}
+.post-description {
+    text-indent: 100px;
+    width: 500px;
+    text-align: justify;
+}
+.form-control {
+    width: 500px;
+}
+

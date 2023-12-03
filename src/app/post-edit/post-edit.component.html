@@ -1,0 +1,41 @@
+
+<div class="container-box" style="font-weight: bolder;">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group col-md-6">
+        <p>CREATE POST</p>
+      </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress1">Title</label>
+        <input type="text" class="form-control" id="inputAddress1" placeholder="title" formControlName="title">
+      </div>
+      <br>
+      <div class="form-group col-md-6">
+        <label for="inputAddress2">Image</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="insert image url" formControlName="image">
+        <img class="img-responsive" src="{{ form.value.image }}"/> 
+      </div>
+      <br>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress3">Description</label>
+      <textarea type="text" class="form-control" id="inputAddress3" placeholder="description" formControlName="description">
+      </textarea>
+    </div>
+    <br>
+    
+    <br>
+    <!-- <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Date</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div> -->
+      <br>
+    <div class="pindutan">
+      <button type="submit" class="btn btn-success" onclick="onSubmit" [disabled]="form.invalid">Save</button> &nbsp; &nbsp; &nbsp;
+      <button type="reset" class="btn btn-warning" >Clear</button> &nbsp; &nbsp; &nbsp;
+      <button type="reset" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+    </div>
+    
+  </form>
+</div>
