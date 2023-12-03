@@ -1,0 +1,36 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-K1qOUhcCyA0KGvGR1Hz8XNOeb2PrvL+rZ3LgIdp9L7P0zCw1b/feC50LG52g5PeJ5EAbn1kqh6daRMvZyFhjwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: orange; position: sticky; top: 0; z-index: 1000;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/post-list" style="color: whitesmoke; font-weight: 500;">JOAQUIN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link active" aria-current="page" routerLink="/post-list" (click)="onHomeClick()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/post-add">Create</a>
+        </ul>
+
+          <!-- <button class="nav-link btn btn-outline-success" type="submit" (click)="onFetch()"> Get </button> -->
+          <!-- <button class="nav-link btn btn-outline-success" type="submit" (click)="onSave()"> Save </button> -->
+          <button class="nav-link btn btn-outline-success" type="submit">Sign In</button>
+          <button class="nav-link btn btn-outline-success" type="submit">Sign Up</button>
+
+          <!-- Search -->
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Start Searching" aria-label="Search">
+        </form>
+ 
+      </div>
+    </div>
+  </nav>
+

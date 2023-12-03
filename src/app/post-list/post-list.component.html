@@ -1,0 +1,6 @@
+<div class="post-grid">
+    <ng-container *ngFor="let post of listOfPosts; let i = index">
+      <app-post [post]="post" [index]="i"></app-post>
+    </ng-container>
+  </div>
+  <br>
