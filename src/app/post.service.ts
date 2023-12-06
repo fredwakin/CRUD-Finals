@@ -8,10 +8,6 @@ export class PostService{
 
     constructor(private http: HttpClient) { }
 
-    fetchData(): Observable<Post[]> {
-    //   throw new Error('Method not implemented.');
-      return this.http.get<Post[]>('https://joaquin-8e05a-default-rtdb.firebaseio.com/posts.json');
-    }
     listChangeEvent: EventEmitter<Post[]> = new EventEmitter
     listOfPosts: Post[] = [
         // new Post("The Verge",
@@ -31,7 +27,6 @@ export class PostService{
         // new Date(), 0)
     ];
   
-
     getPost(){
         return this.listOfPosts;
     }
@@ -41,25 +36,37 @@ export class PostService{
     }
     deletePost(index: number){
         this.listOfPosts.splice(index, 1);
+        this.saveData();
     }
     addPost(post: Post){
         this.listOfPosts.push(post);
     }
     updatePost(index: number, post: Post){
         this.listOfPosts[index]=post;
+        this.saveData();
     }
     getSpecPost( index: number) {
         return this.listOfPosts[index];
     }
     likePost(index: number) {
         this.listOfPosts[index].numberOflikes++;
-        return this.listOfPosts[index].numberOflikes;
+        this.saveData();
     }
     addComment(index: number, comment: string) {
         this.listOfPosts[index].comments.push(comment);
+        this.saveData();
     }
     getComments(index: number) {
         return this. listOfPosts[index].comments;
+    }
+    fetchComments(index: number): Observable<any> {
+        return this.http.get(`https://joaquin-8e05a-default-rtdb.firebaseio.com/posts/${index}/comments.json`);
+    }
+    saveData(){
+        this.http.put('https://joaquin-8e05a-default-rtdb.firebaseio.com/posts.json',this.listOfPosts)
+        .subscribe((res)=>{
+        console.log(res);
+        })
     }
     
 }

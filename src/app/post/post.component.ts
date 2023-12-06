@@ -17,7 +17,10 @@ export class PostComponent implements OnInit{
   constructor(private postService: PostService, private router: Router) { }
 
 ngOnInit(): void {
-  console.log(this.post);
+    this.postService.fetchComments(this.index).subscribe(comments => {
+        this.comment = comments;
+    });
+    console.log(this.post);
 }
 delete(){
   this.postService.deletePost(this.index);
@@ -28,7 +31,6 @@ onEdit(){
 }
 onlikes(){
   this.postService.likePost(this.index)
-  this.like = this.postService.likePost(this.index);
 }
 onAddComment(comment: string){
   this.postService.addComment(this.index, comment);
