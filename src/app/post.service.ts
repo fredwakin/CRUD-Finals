@@ -52,6 +52,12 @@ export class PostService{
         this.listOfPosts[index].numberOflikes++;
         this.saveData();
     }
+    dislikePost(index: number) {
+        if (this.listOfPosts[index].numberOflikes > 0) {
+            this.listOfPosts[index].numberOflikes--;
+            this.saveData();
+        }
+    }
     addComment(index: number, comment: string) {
         this.listOfPosts[index].comments.push(comment);
         this.saveData();
@@ -68,5 +74,14 @@ export class PostService{
         console.log(res);
         })
     }
-    
+    deleteComment(postIndex: number, commentIndex: number) {
+        this.listOfPosts[postIndex].comments = [
+            ...this.listOfPosts[postIndex].comments.slice(0, commentIndex),
+            ...this.listOfPosts[postIndex].comments.slice(commentIndex + 1)
+        ];
+        this.http.put(`https://joaquin-8e05a-default-rtdb.firebaseio.com/posts/${postIndex}/comments.json`, this.listOfPosts[postIndex])
+          .subscribe(() => {
+            console.log('Delete Comment in Firebase');
+          });
+    }
 }

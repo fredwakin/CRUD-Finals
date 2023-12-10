@@ -23,8 +23,10 @@
 <!-- Post Comments -->
 <form (ngSubmit)="onAddComment(commentInput.value)">
     <label class="font-weight-bold">Comments:</label>
-        <div *ngFor="let comment of comment">
-            {{ comment }} {{post?.dateCreated}}
+        <div *ngFor="let comment of comment; let i = index">
+            {{ comment }}
+            <button class="btn">Edit</button>
+            <button class="btn" (click)="onDeleteComment(i)">Delete</button>
         </div>
         <input #commentInput type="text" class="form-control" placeholder="What's on your mind?" />
         <button type="submit" class="btn btn-dark" (click)="onAddComment">Add Comment</button> &nbsp;

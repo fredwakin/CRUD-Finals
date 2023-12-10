@@ -19,7 +19,9 @@ export class HeaderComponent implements OnInit{
               private router: Router){}
 
   ngOnInit(): void {
-
+      this.backEndService.fetchData().subscribe((posts: Post[]) => {
+          this.postService.setPosts(posts);
+      });
   }
   onHomeClick() {
     this.backEndService.fetchData().subscribe();

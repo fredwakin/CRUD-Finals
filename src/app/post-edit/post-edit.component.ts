@@ -50,7 +50,7 @@ this.index = params['index'];
 
 
     const post: Post = new Post(
-      title, image, description, 'Erlfred', new Date(), 0
+      title, image, description, 'Erlfred', new Date(), 0, 0
     );
 
     if(this.editMode==false){
