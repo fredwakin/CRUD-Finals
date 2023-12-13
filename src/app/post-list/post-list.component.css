@@ -1,9 +1,26 @@
-.post-grid {
-    display: block;
-    padding-bottom: 50px;
-    padding-left: 425px;
-    padding-top: 50px;
-    justify-items: center;
+.container-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
 
-  }
+.container-box p {
+  margin-bottom: 10px;
+}
 
+.container-box button {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container-box button:hover {
+  background-color: #303f9f;
+}

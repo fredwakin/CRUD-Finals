@@ -29,8 +29,21 @@ export class HeaderComponent implements OnInit{
   onSave(){
     this.backEndService.saveData();
   }
-
   onFetch(){
     this.backEndService.fetchData();
   }
+  // searchTerm: string = '';
+  // searchResults: Post[] = [];
+
+  // onSearch(event: Event) {
+  //   event.preventDefault();
+  //   this.postService.searchPosts(this.searchTerm).subscribe(results => {
+  //     this.searchResults = results.map(item => {
+  //       return {
+  //         id: item.payload.doc.id,
+  //         ...item.payload.doc.data() as Post
+  //       }
+  //     });
+  //   });
+  // }
 }

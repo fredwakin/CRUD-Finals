@@ -7,8 +7,10 @@ export class Post{
         public dateCreated: Date,
         public numberOflikes: number,
         public numberOfdislikes: number,
-        public comments: string[]=[]
+        public comments: string[]=[],
     ){
 
     }
+
+    isLikedByUser?: boolean;
 }

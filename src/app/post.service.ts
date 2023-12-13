@@ -3,6 +3,8 @@ import { Post } from './post.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
+
 @Injectable({ providedIn: 'root' })
 export class PostService{
 
@@ -52,7 +54,7 @@ export class PostService{
         this.listOfPosts[index].numberOflikes++;
         this.saveData();
     }
-    dislikePost(index: number) {
+    unlikePost(index: number) {
         if (this.listOfPosts[index].numberOflikes > 0) {
             this.listOfPosts[index].numberOflikes--;
             this.saveData();

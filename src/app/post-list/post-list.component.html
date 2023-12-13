@@ -1,6 +1,13 @@
+<div class="container-box">
+  <h4>Do you have photos or stories to share?</h4>
+  <h6>Join our community by creating your own post!</h6>
+  <h6>Get started by clicking here:</h6>
+  <button mat-raised-button [routerLink]="['/post-add']">Create Post</button>
+</div>
+
+<!-- existing post list code here -->
 <div class="post-grid">
     <ng-container *ngFor="let post of listOfPosts; let i = index">
       <app-post [post]="post" [index]="i"></app-post>
     </ng-container>
-  </div>
-  <br>
+</div>

@@ -34,10 +34,13 @@ onEdit(){
   this.router.navigate(['/post-edit', this.index]);
 }
 onlikes(){
-  this.postService.likePost(this.index)
-}
-ondislikes(){
-  this.postService.dislikePost(this.index)
+    if (this.post?.isLikedByUser) {
+        this.postService.unlikePost(this.index);
+        this.post && (this.post.isLikedByUser = false);
+    } else {
+        this.postService.likePost(this.index);
+        this.post && (this.post.isLikedByUser = true);
+    }
 }
 onAddComment(newComment: string) {
   this.postService.addComment(this.index, newComment);

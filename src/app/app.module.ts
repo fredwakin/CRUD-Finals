@@ -26,7 +26,7 @@ const routes: Routes = [
     HeaderComponent,
     PostComponent,
     PostEditComponent,
-    PostListComponent
+    PostListComponent,
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), ReactiveFormsModule, HttpClientModule ],

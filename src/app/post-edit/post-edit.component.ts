@@ -65,4 +65,22 @@ this.index = params['index'];
   onCancel() {
     this.router.navigate(['/post-list']);
   }
+  imagePreview: string | ArrayBuffer | null = null;
+
+  onFileSelected(event: Event) {
+  const file: File | null = event.target instanceof HTMLInputElement && event.target.files && event.target.files.length > 0 ? event.target.files[0] : null;
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = (e: any) => {
+      this.form.patchValue({
+        image: e.target.result,
+      });
+      this.imagePreview = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
+}
 }
