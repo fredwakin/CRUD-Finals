@@ -1,9 +1,16 @@
 <div class="container-box">
+
+    <!-- Post Text -->
+<h5>{{post?.author}}</h5>
+<h6>{{post?.dateCreated}}</h6>
 <!-- Post title -->
 <h2 class="post-title">{{post?.title}}</h2>
+<h5 class="post-description">{{post?.description}}</h5>
+
+
 
 <!-- Post Image -->
-<img class="img-responsive" src="{{ post?.image }}" style="width: 500px;"> <br/>
+<img class="img-responsive" src="{{ post?.image }}" style="width: 500px;" (click)="enlargeImage($event)">
 
 <!-- Post Likes -->
 <button type="button" (click)="onlikes()" style="background: none; text-decoration: none; font-size: 24px; color: red; border: none;" class="fa fa-heart">
@@ -15,18 +22,12 @@
 <button class="btn btn-danger" (click)="delete()">Delete</button>
 <br/>
 
-<!-- Post Text -->
-<h5>{{post?.author}}</h5>
-<h6>{{post?.dateCreated}}</h6>
-<h5 class="post-description">{{post?.description}}</h5>
-
 <!-- Post Comments -->
 <form (ngSubmit)="onAddComment(commentInput.value)">
     <label class="font-weight-bold">Comments:</label>
         <div *ngFor="let comment of comment; let i = index">
             {{ comment }}
-            <button class="btn">Edit</button>
-            <button class="btn" (click)="onDeleteComment(i)">Delete</button>
+            <button class="btn btn-light" (click)="onDeleteComment(i)">Delete</button>
         </div>
         <input #commentInput type="text" class="form-control" placeholder="What's on your mind?" />
         <button type="submit" class="btn btn-dark" (click)="onAddComment">Add Comment</button> &nbsp;
