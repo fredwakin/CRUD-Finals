@@ -3,3 +3,29 @@
     color: #333;
     font-family: Arial, sans-serif;
   }
+  .dabody {
+    background-color: #bccfd5;
+  }
+  
+  .dabody.dark-mode {
+    background-color: #444;
+    color: white;
+  }
+  .dabody.dark-mode .container-box {
+    background-color: #333;
+    color: white;
+  }
+  .navbar.navbar-expand-lg {
+    background-color: #244f4e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .dabody.dark-mode .navbar.navbar-expand-lg {
+    background-color: #333;
+  }
+  .enlarged {
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+  }
