@@ -49,4 +49,8 @@ onAddComment(newComment: string) {
 onDeleteComment(commentIndex: number) {
     this.postService.deleteComment(this.index, commentIndex);
 }
+enlargeImage(event: Event) {
+  const element = event.target as HTMLElement;
+  element.classList.toggle('enlarged');
+}
 }
