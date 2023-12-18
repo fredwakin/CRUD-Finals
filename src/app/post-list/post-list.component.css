@@ -1,10 +1,9 @@
-.container-box {
+.container-box1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
   border-radius: 10px;
 }
 
@@ -12,7 +11,7 @@
   margin-bottom: 10px;
 }
 
-.container-box button {
+.container-box1 button {
   background-color: #3f51b5;
   color: white;
   padding: 10px 20px;
